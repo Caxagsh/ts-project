@@ -19,7 +19,7 @@ function shiftRound(str: string, shift: number): string {
     // the code should be begun from ASCII code 'z'
     //source letter 'c' will be 'a' if "shift" == 2
     //source letter 'b' will be 'z' if shift ==2
-    //example: ushiftRound("eefb!", 4) => ("aabx!")
+    //example: ushiftRound("eefb!", 4) => ("aabx!") 
 
 function unshiftRound(str: string, shift: number): string {
     let isShiftRound: boolean = false;
@@ -28,10 +28,10 @@ function unshiftRound(str: string, shift: number): string {
 
 function getNewString(str: string, isShiftRound: boolean, shift: number): string{
     let res: string = "";
-    let arr: string[];
+    let arrStr: string[];
 
-        arr = str.split("");
-        res = arr.map(elm => {
+        arrStr = str.split("");
+        res = arrStr.map(elm => {
             if(elm.charCodeAt(0) >= MIN_ASC && elm.charCodeAt(0) <= MAX_ASC){
             let newShift = getNewShift(shift);
             let newElm = getNewLetter(elm.charCodeAt(0), newShift, isShiftRound);
@@ -46,7 +46,7 @@ function getNewString(str: string, isShiftRound: boolean, shift: number): string
 }
 
 function getNewShift(shift: number):number{
-    shift > MAX_ASC - MIN_ASC ? shift = Math.trunc(shift % (MAX_ASC - MIN_ASC)) : shift;
+    shift > MAX_ASC - MIN_ASC ? shift = (shift % (MAX_ASC - MIN_ASC)) : shift;
     return shift;
 }
 
@@ -66,3 +66,4 @@ let unShift3 = unshiftRound("eefb!", 4);
 let shift1 =  shiftRound("a", 2);
 let shift2 =  shiftRound("z", 2);
 let shift3 =  shiftRound("aabx!", 4);
+let aaa;
