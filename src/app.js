@@ -24,10 +24,10 @@ function unshiftRound(str, shift) {
     return getNewString(str, isShiftRound, shift);
 }
 function getNewString(str, isShiftRound, shift) {
-    let res = "";
-    let arrStr;
-    arrStr = str.split("");
-    res = arrStr.map(elm => {
+    // let res: string = "";
+    // let arrStr: string[];
+    let arrStr = str.split("");
+    let res = arrStr.map(elm => {
         if (elm.charCodeAt(0) >= MIN_ASC && elm.charCodeAt(0) <= MAX_ASC) {
             let newShift = getNewShift(shift);
             let newElm = getNewLetter(elm.charCodeAt(0), newShift, isShiftRound);

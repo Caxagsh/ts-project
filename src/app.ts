@@ -27,11 +27,11 @@ function unshiftRound(str: string, shift: number): string {
 }
 
 function getNewString(str: string, isShiftRound: boolean, shift: number): string{
-    let res: string = "";
-    let arrStr: string[];
+    // let res: string = "";
+    // let arrStr: string[];
 
-        arrStr = str.split("");
-        res = arrStr.map(elm => {
+        let arrStr = str.split("");
+        let res = arrStr.map(elm => {
             if(elm.charCodeAt(0) >= MIN_ASC && elm.charCodeAt(0) <= MAX_ASC){
             let newShift = getNewShift(shift);
             let newElm = getNewLetter(elm.charCodeAt(0), newShift, isShiftRound);
